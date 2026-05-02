@@ -224,7 +224,9 @@ def serve_index():
 @app.get("/{filename}")
 def serve_static(filename: str):
     import os
-    if os.path.exists(filename):
+    # SECURITY FIX: Only allow serving css, js, html, and images. Prevent downloading the database or source code!
+    allowed_extensions = ('.css', '.js', '.html', '.png', '.jpg', '.jpeg', '.svg')
+    if os.path.exists(filename) and filename.endswith(allowed_extensions):
         return FileResponse(filename)
     raise HTTPException(status_code=404)
 
