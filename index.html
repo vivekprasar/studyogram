@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Studyogram - Academic Social Network</title>
+    <!-- Fonts: Inter for premium Apple-style typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <div id="app-container">
+        <!-- Screens will be injected here -->
+        <main id="main-content"></main>
+        
+        <!-- Bottom Navigation -->
+        <nav id="bottom-nav" class="hidden">
+            <button class="nav-item active" data-target="home">
+                <i data-lucide="home"></i>
+                <span>Home</span>
+            </button>
+            <button class="nav-item" data-target="notes">
+                <i data-lucide="book-open"></i>
+                <span>Notes</span>
+            </button>
+            <button class="nav-item" data-target="groups">
+                <i data-lucide="users"></i>
+                <span>Groups</span>
+            </button>
+            <button class="nav-item" data-target="exchange">
+                <i data-lucide="repeat"></i>
+                <span>Exchange</span>
+            </button>
+            <button class="nav-item" data-target="profile">
+                <i data-lucide="user"></i>
+                <span>Profile</span>
+            </button>
+        </nav>
+        
+        <!-- Streak Recovery Quiz Modal -->
+        <div id="quiz-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Streak Recovery</h2>
+                    <p>Answer 4/5 questions correctly to restore your streak!</p>
+                </div>
+                <div id="quiz-body"></div>
+            </div>
+        </div>
+
+        <!-- Notification Toast Container -->
+        <div id="toast-container"></div>
+    </div>
+    
+    <script type="module" src="js/data.js"></script>
+    <script type="module" src="js/components.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
